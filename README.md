@@ -29,3 +29,11 @@ Step - 5
 
 Run the command:
 - streamlit run app.py
+
+Files
+-----
+~~~~~~~~~~~~
+- dog_breed_classifier_notebook.ipynb -> The notebook
+- app.py -> the web app
+
+~~~~~~~~~~~~
