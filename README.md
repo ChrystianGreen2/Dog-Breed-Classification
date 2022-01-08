@@ -28,4 +28,4 @@ install the dependencies:
 Step - 5
 
 Run the command:
--streamlit run app.py
+- streamlit run app.py
