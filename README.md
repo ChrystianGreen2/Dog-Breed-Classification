@@ -72,6 +72,12 @@ We rescale the images by dividing every pixel in every image by 255.
 ![image](https://user-images.githubusercontent.com/71555983/148663905-ff556fe7-e744-44c7-b8eb-1ab99eddb819.png)
 
 ### Implementation and Refinement
+### Algorithms and Techniques
+#### CNN
+A Convolutional Neural Network (ConvNet/CNN) is a Deep Learning algorithm which can take in an input image, assign importance (learnable weights and biases) to various aspects/objects in the image and be able to differentiate one from the other. The pre-processing required in a ConvNet is much lower as compared to other classification algorithms. While in primitive methods filters are hand-engineered, with enough training, ConvNets have the ability to learn these filters/characteristics.
+
+#### Transfer Learning
+Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on a second task.
 
 In this step we will implement some models, some being from 0 and others using transfer learning and combining an own architecture together with transfer learning.
 
