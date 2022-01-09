@@ -1,4 +1,110 @@
 # Dog-Breed-Classification
+# I. Definition
+
+### Project Overview
+
+In this project we will solve the problem of classifying dog breeds, it is an image classification problem and we use the convolutional network architecture to solve this problem. O dataset contém informações sobre 133 classes de cachorros, e é nos provido pela Udacity.
+
+---
+### Problem Statement
+
+Given an image, we need to know a priori if it contains a dog, in this case, we will have to classify the dog's race among the 133 possible classes, we will use the convolutional network architecture, widely used for image classification problems, and therefore it fits perfectly in the problem we are facing.
+
+### Metrics
+ 
+As metrics we use precision, it's a simple metric, but it tells us how much our model performs on a dataset that hasn't been seen yet.
+
+# II. Analysis
+### Data Exploration
+
+First let's explore our data, seeing our number of classes, total images and total data in each subset of training, validation and testing.
+![image](https://user-images.githubusercontent.com/71555983/148663842-534a7ac6-51ba-4b40-aca4-8d9d2bd92cdc.png)
+![image](https://user-images.githubusercontent.com/71555983/148663856-d3ad4d3f-0e9b-44d6-aa63-f65a31f7aa83.png)
+
+### Data Visualization
+
+In this part we'll take a look at our data to better understand what kind of image we're dealing with.
+![image](https://user-images.githubusercontent.com/71555983/148663865-7a924201-aa78-4be0-aced-7b35935dc93f.png)
+
+# III. Methodology
+### Data Preprocessing
+
+
+
+When using TensorFlow as backend, Keras CNNs require a 4D array (which we'll also refer to as a 4D tensor) as input, with shape
+
+$$
+(\text{nb_samples}, \text{rows}, \text{columns}, \text{channels}),
+$$
+
+where `nb_samples` corresponds to the total number of images (or samples), and `rows`, `columns`, and `channels` correspond to the number of rows, columns, and channels for each image, respectively.  
+
+The `path_to_tensor` function below takes a string-valued file path to a color image as input and returns a 4D tensor suitable for supplying to a Keras CNN.  The function first loads the image and resizes it to a square image that is $224 \times 224$ pixels.  Next, the image is converted to an array, which is then resized to a 4D tensor.  In this case, since we are working with color images, each image has three channels.  Likewise, since we are processing a single image (or sample), the returned tensor will always have shape
+
+$$
+(1, 224, 224, 3).
+$$
+
+The `paths_to_tensor` function takes a numpy array of string-valued image paths as input and returns a 4D tensor with shape 
+
+$$
+(\text{nb_samples}, 224, 224, 3).
+$$
+
+Here, `nb_samples` is the number of samples, or number of images, in the supplied array of image paths.  It is best to think of `nb_samples` as the number of 3D tensors (where each 3D tensor corresponds to a different image) in your dataset!
+
+We rescale the images by dividing every pixel in every image by 255.
+
+![image](https://user-images.githubusercontent.com/71555983/148663905-ff556fe7-e744-44c7-b8eb-1ab99eddb819.png)
+
+### Implementation and Refinement
+
+In this step we will implement some models, some being from 0 and others using transfer learning and combining an own architecture together with transfer learning.
+
+![image](https://user-images.githubusercontent.com/71555983/148664004-088369b7-d153-4b82-a1b9-04571f5ec8d1.png)
+
+
+### Refinement
+
+Now that we've implemented a network from scratch and are using transferning, let's use the two techniques together to achieve even better results.
+![image](https://user-images.githubusercontent.com/71555983/148663977-dc1e921f-94ad-4c8e-b4c0-ac4ef7b2f052.png)
+
+# IV. Results
+### Model Evaluation and Validation
+Now let's use our test dataset to see how well we did, and we'll also use screenshots from my local computer to see how the network actually performs on any data used.
+
+![image](https://user-images.githubusercontent.com/71555983/148664090-22892e3a-c609-4e1e-8a7c-8901d0e28a98.png)
+
+Of the 6 images he only missed one, the model did better than expected since in the tests it only resulted in 70% accuracy.
+
+![image](https://user-images.githubusercontent.com/71555983/148664117-2c29c441-78d7-44cb-b6dd-8aa5cfbba46e.png)
+
+
+### Justification
+Compared to the model without transfer learning, the model with transferlearning and some dense layers achieved surprising results.
+While with the transfer learning only model, we had achieved an extremely low result of 49%
+![image](https://user-images.githubusercontent.com/71555983/148664241-6a61e1d0-ff3b-4090-854d-a3aea822b16f.png)
+Adding some dense layers, we had an increase to 72%
+![Uploading image.png…]()
+
+# V. Conclusion
+### Reflection
+I'm passionate about the field of computer vision, and during the project, I saw how comprehensive and complex CNN can be depending on the problem, I hope to delve deeper into this fantastic field and come across problems that leave me days thinking about a solution. and in the end find her.
+
+I'm impressed and happy how the project covered several parts of a training flow, from data input to tests with real data, it's something amazing.
+
+### Improvement
+1-More data
+Provide a larger dataset with more variant images of dogs, such as dressed dogs
+
+2-Data augmentation
+Use data augmentation techniques to make the model more accurate
+
+3- Deeper architecture
+We use a very simple network, maybe one with more Dense layers could help more to detect the patterns of each class
+
+
+# VI. Web App Running
 To run de web Application you need create a env and install the following dependencies:
 
 Step - 1
