@@ -1,6 +1,20 @@
 # Dog-Breed-Classification
 # I. Definition
 
+### Sections
+- Project Overview
+- Problem Statement
+- Metrics
+- Data Exploration
+- Data Visualization
+- Data Preprocessing
+- Implementation
+- Refinement
+- Model Evaluation and Validation
+- Justification
+- Reflection
+- Improvement
+
 ### Project Overview
 
 In this project we will solve the problem of classifying dog breeds, it is an image classification problem and we use the convolutional network architecture to solve this problem. O dataset contém informações sobre 133 classes de cachorros, e é nos provido pela Udacity.
