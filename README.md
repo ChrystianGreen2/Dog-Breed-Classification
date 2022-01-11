@@ -26,7 +26,16 @@ Given an image, we need to know a priori if it contains a dog, in this case, we 
 
 ### Metrics
  
-As metrics we use precision, it's a simple metric, but it tells us how much our model performs on a dataset that hasn't been seen yet.
+As we are facing a multiclassification problem, there are some possible metrics to use as accuracy, precision, recall, F1-score, ROC, AUC ...
+
+We are going to use:
+- Accuracy: In multilabel classification, this method computes subset accuracy: the set of labels predicted for a sample must exactly match the corresponding set of labels in y_true.
+
+- Precision: The precision is the ratio tp / (tp + fp) where tp is the number of true positives and fp the number of false positives. The precision is intuitively the ability of the classifier not to label as positive a sample that is negative. 
+
+We are going to use accuracy because it is the simplest metric and gives an overview of how the model is performing.
+
+In cases with unbalanced data, precision is a better metric than accuracy. And in our case, there are classes that contain a higher frequency than other classes, so precision will be a good metric here.
 
 # II. Analysis
 ### Data Exploration
@@ -109,9 +118,17 @@ Adding some dense layers, we had an increase to 72%
 
 # V. Conclusion
 ### Reflection
-I'm passionate about the field of computer vision, and during the project, I saw how comprehensive and complex CNN can be depending on the problem, I hope to delve deeper into this fantastic field and come across problems that leave me days thinking about a solution. and in the end find her.
+First we reading the data, is a very simple task, since the exploration and visualization varies a lot based on the data, with images it is a simpler task sometimes.
 
-I'm impressed and happy how the project covered several parts of a training flow, from data input to tests with real data, it's something amazing.
+However, the preprocessing part is a little more complex, there are several transformations that can be done on an image so that the model understands it well.
+
+The implementation of the model is something that can be tiring since we need to test different architectures, like from scratch, with transferlearning, or a mixture of these.
+
+The evaluation part of the model already becomes something simpler once we had already defined which metrics we would use and why.
+
+It is interesting to see that due to the large amount of classes and little data, the model does not perform well during training, but thanks to transfer learning, even with a small amount of data, we were able to achieve reasonable metrics.
+
+It is also very difficult to decide how many layers to choose, if we choose many layers, the accuracy increases, but the model becomes heavier and slower, perhaps this varies with the problem.
 
 ### Improvement
 1-More data
